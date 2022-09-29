@@ -17,6 +17,25 @@ def getUserInput(low,high):
     return int(response)
 
 
+def calculateRating(val):
+    returnString = ""
+
+    if val == 0:
+        returnString = "NONE"
+    elif val > 0.1 and val < 3.9:
+        returnString = "LOW"
+    elif val > 4 and val < 6.9:
+        returnString = "MEDIUM"
+    elif val > 7 and val < 8.9:
+        returnString = "HIGH"
+    elif val > 9:
+        returnString = "CRITICAL"
+    else: 
+        return "SEG FAULT"
+
+    return returnString
+
+
 # Get Attack Vector user input variable
 print("Enter a number for Attack Vector:") 
 print("1 : Physical")
