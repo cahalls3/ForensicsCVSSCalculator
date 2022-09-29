@@ -49,3 +49,21 @@ def binaryResponse2MathScore(val):
 # And the Exploitability sub score is,
 
 # 8.22 × 𝐴𝑡𝑡𝑎𝑐𝑘𝑉𝑒𝑐𝑡𝑜𝑟 × 𝐴𝑡𝑡𝑎𝑐𝑘𝐶𝑜𝑚𝑝𝑙𝑒𝑥𝑖𝑡𝑦 × 𝑃𝑟𝑖𝑣𝑖𝑙𝑒𝑔𝑒𝑅𝑒𝑞𝑢𝑖𝑟𝑒𝑑 × 𝑈𝑠𝑒𝑟𝐼𝑛𝑡𝑒𝑟𝑎𝑐𝑡𝑖𝑜𝑛
+
+def scoreCalc():
+    exploitabilityCoefficient = 8.22
+    scopeCoefficient = 1.08
+
+    # Define associative arrays mapping each metric value to the constant used in the CVSS scoring formula.
+    weight = {
+        "attackVector" : [ 0.2, 0.55, 0.62, 0.85 ],
+        "attackComplexity" : [ 0.44, 0.52, 0.77 ],
+        "privilegesRequiredUnChanged" : [ 0.85, 0.62, 0.27 ],
+        "privilegesRequiredChanged" : [ 0.85, 0.68, 0.5 ],
+        "userInteraction" : [ 0.85, 0.62 ],
+        "scope" : [ 6.42, 7.52 ],
+        "confidentialityImpact" : [ 0, 0.22, 0.56 ],
+        "integrityImpact" : [ 0, 0.22, 0.56 ],
+        "availabilityImpact" : [ 0, 0.22, 0.56 ]
+        # C, I, A, have same weights
+    }
