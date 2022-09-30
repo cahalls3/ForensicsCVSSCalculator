@@ -127,9 +127,9 @@ sAttackComplexity = getUserInput(1,3)
 
 # Get Privileges Required user input variable
 print("Enter a number for Privileges Required:") 
-print("1 : None")
+print("1 : High")
 print("2 : Low")
-print("3 : High")
+print("3 : None")
 
 sPrivilegesRequired = getUserInput(1,3)
 
