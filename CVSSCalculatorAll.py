@@ -36,9 +36,9 @@ def scoreCalc():
     weight = {
         "attackVector" : [ 0.2, 0.55, 0.62, 0.85 ],
         "attackComplexity" : [ 0.44, 0.52, 0.77 ],
-        "privilegesRequiredUnChanged" : [ 0.85, 0.62, 0.27 ],
-        "privilegesRequiredChanged" : [ 0.85, 0.68, 0.5 ],
-        "userInteraction" : [ 0.85, 0.62 ],
+        "privilegesRequiredUnChanged" : [ 0.27, 0.62, 0.85 ],
+        "privilegesRequiredChanged" : [ 0.5, 0.68, 0.85 ],
+        "userInteraction" : [ 0.62, 0.85 ],
         "scope" : [ 6.42, 7.52 ],
         "confidentialityImpact" : [ 0, 0.22, 0.56 ],
         "integrityImpact" : [ 0, 0.22, 0.56 ],
