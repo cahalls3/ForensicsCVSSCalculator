@@ -46,6 +46,33 @@ def scoreCalc():
         # C, I, A, have same weights
     }
 
+    tempScopeType = ""
+    if sScope == 1:
+        tempScopeType = "privilegesRequiredUnChanged"
+    elif sScope == 2:
+        tempScopeType = "privilegesRequiredChanged"
+
+    baseScore = 0
+    impactScore = 0
+    exploitabilityScore = (exploitabilityCoefficient * weight["attackVector"][sAttackVector - 1] * weight[tempScopeType][sPrivilegesRequired - 1] * weight["attackComplexity"][sAttackComplexity - 1] * weight["userInteraction"][sUserInteraction - 1])
+    impactScoreMultiplier = (1 - ((1 - weight["confidentialityImpact"][sConfidentialityImpact - 1]) * (1 - weight["integrityImpact"][sIntegrityImpact - 1]) * (1 - weight["availabilityImpact"][sAvailabilityImpact - 1])))  
+    if tempScopeType == "privilegesRequiredUnChanged":
+        impactScore = (weight["scope"][sScope - 1] * impactScoreMultiplier)
+    elif tempScopeType == "privilegesRequiredChanged":
+        impactScore = (weight["scope"][sScope - 1] * (impactScoreMultiplier - 0.029) - 3.25 * math.pow((impactScoreMultiplier - 0.02), 15))
+    
+    if impactScore <= 0:
+        baseScore = 0
+    else:
+        if sScope == 1:
+            baseScore = min((exploitabilityScore + impactScore), 10)
+        elif sScope == 2:
+            baseScore = min(((exploitabilityScore + impactScore) * scopeCoefficient), 10)
+
+    baseScore = (math.ceil(baseScore * 10) / 10)
+    return baseScore
+
+
 def getUserInput(low,high):
     response = int(input("Enter value below: \n"))
     print("\n")
@@ -143,3 +170,6 @@ print("2 : Low")
 print("3 : High")
 
 sAvailabilityImpact = getUserInput(1,3)
+
+score = scoreCalc()
+print(calculateRating(score) + " " + str(score))
