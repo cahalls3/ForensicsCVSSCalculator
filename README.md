@@ -12,8 +12,8 @@ In order to run this program the user should do the following:
 2. Run the file "<Insert Jade's file name here>"
 3. Input values as prompted
 
-` `  
-` `  
+<br />
+<br />
 
 ### Severity Score Ranges
 
@@ -25,8 +25,8 @@ In order to run this program the user should do the following:
 | High | 7 - 8.9 |
 | Critical | 9 + |
 
-` `  
-` `  
+<br />
+<br />
 
 ### References
 
@@ -34,8 +34,8 @@ We referenced a similarly themed calculator made in JavaScript and used some of 
 
 [CVSS Calculator by FIRST.ORG](https://github.com/cvssjs/cvssjs.github.io/tree/master/3.0)
 
-` `  
-` `  
+<br />
+<br />
 
 #### Libraries
 
