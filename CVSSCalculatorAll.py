@@ -94,13 +94,13 @@ def calculateRating(val):
 
     if val == 0:
         returnString = "NONE"
-    elif val > 0.1 and val < 3.9:
+    elif val >= 0.1 and val <= 3.9:
         returnString = "LOW"
-    elif val > 4 and val < 6.9:
+    elif val >= 4 and val <= 6.9:
         returnString = "MEDIUM"
-    elif val > 7 and val < 8.9:
+    elif val >= 7 and val <= 8.9:
         returnString = "HIGH"
-    elif val > 9:
+    elif val >= 9:
         returnString = "CRITICAL"
     else: 
         return "SEG FAULT"
