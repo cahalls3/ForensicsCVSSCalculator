@@ -9,7 +9,7 @@ The intent of this program is to provide a Python solution to a CVSS calculator.
 In order to run this program the user should do the following:
 
 1. Download code
-2. Run the file "<Insert Jade's file name here>"
+2. Run the file "CVSSCalculatorAll.py"
 3. Input values as prompted
 
 <br />

@@ -2,6 +2,7 @@ import string
 from urllib import response
 import math
 
+# Calculating the score this one has the formula
 def scoreCalc():
     exploitabilityCoefficient = 8.22
     scopeCoefficient = 1.08
@@ -47,6 +48,7 @@ def scoreCalc():
     return baseScore
 
 
+# Function to receive user intput
 def getUserInput(low,high):
     response = int(input("Enter value below: \n"))
     print("\n")
