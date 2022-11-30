@@ -83,69 +83,87 @@ def calculateRating(val):
 
     return returnString
 
+# Function to receive Class object
+def Calculate(RadioValues):
 
-# Get Attack Vector user input variable
-print("Enter a number for Attack Vector:") 
-print("1 : Physical")
-print("2 : Local")
-print("3 : Adjacent Network")
-print("4 : Network")
+    # Get Attack Vector user input variable
+    # print("Enter a number for Attack Vector:") 
+    # print("1 : Physical")
+    # print("2 : Local")
+    # print("3 : Adjacent Network")
+    # print("4 : Network")
 
-sAttackVector = getUserInput(1,4)
+    # sAttackVector = getUserInput(1,4)
+    global sAttackVector
+    sAttackVector = RadioValues.attackVector
 
-# Get Attack Complexity user input variable
-print("Enter a number for Attack Complexity:") 
-print("1 : High")
-print("2 : Medium")
-print("3 : Low")
+    # Get Attack Complexity user input variable
+    # print("Enter a number for Attack Complexity:") 
+    # print("1 : High")
+    # print("2 : Medium")
+    # print("3 : Low")
 
-sAttackComplexity = getUserInput(1,3)
+    # sAttackComplexity = getUserInput(1,3)
+    global sAttackComplexity
+    sAttackComplexity = RadioValues.attackComplexity
 
-# Get Privileges Required user input variable
-print("Enter a number for Privileges Required:") 
-print("1 : High")
-print("2 : Low")
-print("3 : None")
+    # Get Privileges Required user input variable
+    # print("Enter a number for Privileges Required:") 
+    # print("1 : High")
+    # print("2 : Low")
+    # print("3 : None")
 
-sPrivilegesRequired = getUserInput(1,3)
+    # sPrivilegesRequired = getUserInput(1,3)
+    global sPrivilegesRequired
+    sPrivilegesRequired = RadioValues.priviledges
 
-# Get User Interaction user input variable
-print("Enter a number for User Interaction:") 
-print("1 : Required")
-print("2 : None")
+    # Get User Interaction user input variable
+    # print("Enter a number for User Interaction:") 
+    # print("1 : Required")
+    # print("2 : None")
 
-sUserInteraction = getUserInput(1,2)
+    # sUserInteraction = getUserInput(1,2)
+    global sUserInteraction
+    sUserInteraction = RadioValues.userInteraction
 
-# Get Scope user input variable
-print("Enter a number for Scope:") 
-print("1 : Unchanged")
-print("2 : Changed")
+    # Get Scope user input variable
+    # print("Enter a number for Scope:") 
+    # print("1 : Unchanged")
+    # print("2 : Changed")
 
-sScope = getUserInput(1,2)
+    # sScope = getUserInput(1,2)
+    global sScope
+    sScope = RadioValues.scope
 
-# Get Confidentiality Impact user input variable
-print("Enter a number for Confidentiality Impact:") 
-print("1 : None")
-print("2 : Low")
-print("3 : High")
+    # Get Confidentiality Impact user input variable
+    # print("Enter a number for Confidentiality Impact:") 
+    # print("1 : None")
+    # print("2 : Low")
+    # print("3 : High")
 
-sConfidentialityImpact = getUserInput(1,3)
+    # sConfidentialityImpact = getUserInput(1,3)
+    global sConfidentialityImpact
+    sConfidentialityImpact = RadioValues.confidentiality
 
-# Get Integrity Impact user input variable
-print("Enter a number for Integrity Impact:") 
-print("1 : None")
-print("2 : Low")
-print("3 : High")
+    # Get Integrity Impact user input variable
+    # print("Enter a number for Integrity Impact:") 
+    # print("1 : None")
+    # print("2 : Low")
+    # print("3 : High")
 
-sIntegrityImpact = getUserInput(1,3)
+    # sIntegrityImpact = getUserInput(1,3)
+    global sIntegrityImpact
+    sIntegrityImpact = RadioValues.integrity
 
-# Get Availability Impact user input variable
-print("Enter a number for Availability Impact:") 
-print("1 : None")
-print("2 : Low")
-print("3 : High")
+    # Get Availability Impact user input variable
+    # print("Enter a number for Availability Impact:") 
+    # print("1 : None")
+    # print("2 : Low")
+    # print("3 : High")
 
-sAvailabilityImpact = getUserInput(1,3)
+    # sAvailabilityImpact = getUserInput(1,3)
+    global sAvailabilityImpact
+    sAvailabilityImpact = RadioValues.availability
 
-score = scoreCalc()
-print(calculateRating(score) + " " + str(score))
+    score = scoreCalc()
+    return calculateRating(score) + " " + str(score)

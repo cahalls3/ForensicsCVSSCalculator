@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-
+import CVSSCalculatorAll
 
 
 layout = [
@@ -52,22 +52,36 @@ window = sg.Window('Push my Buttons', layout, size=(700,600))
 
 ###Showing the Application, also GUI functions can be placed here.
 
-attackVector = 0
-attackComplexity = 0
-priviledges = 0
-userInteraction = 0
-scope = 0
-confidentiality = 0
-integrity = 0
-availability = 0
+# attackVector = 0
+# attackComplexity = 0
+# priviledges = 0
+# userInteraction = 0
+# scope = 0
+# confidentiality = 0
+# integrity = 0
+# availability = 0
+
+### Class Object
+class RadioValues():
+    # Populating values in the class
+    def __init__(self, attackVector, attackComplexity, priviledges, userInteraction, scope, confidentiality, integrity, availability):
+        self.attackVector = attackVector
+        self.attackComplexity = attackComplexity
+        self.priviledges = priviledges
+        self.userInteraction = userInteraction
+        self.scope = scope
+        self.confidentiality = confidentiality
+        self.integrity = integrity
+        self.availability = availability
 
 while True:
     event, values = window.read()
-    if event == sg.WIN_CLOSED or event=="Exit":
-        break
-    elif event == "Calculate":
-        
-        sg.Popup("The CVSS Score is: 69420")
+    # if event == sg.WIN_CLOSED or event=="Exit":
+    #     break
+    # elif event == "Calculate":
+    #     radioValues = RadioValues(attackVector, attackComplexity, priviledges, userInteraction, scope, confidentiality, integrity, availability)
+    #     cvssScore = CVSSCalculatorAll.Calculate(radioValues)
+    #     sg.Popup("The CVSS Score is: " + cvssScore)
 
     if values["AttackVecNet"] == True:
         attackVector = 4
@@ -122,5 +136,13 @@ while True:
         availability = 2
     elif values["AvailImpH"] == True:
         availability = 3
+
+    if event == sg.WIN_CLOSED or event=="Exit":
+        break
+    elif event == "Calculate":
+        radioValues = RadioValues(attackVector, attackComplexity, priviledges, userInteraction, scope, confidentiality, integrity, availability)
+        cvssScore = CVSSCalculatorAll.Calculate(radioValues)
+        sg.Popup("The CVSS Score is: " + cvssScore)
+
 
 window.close()
