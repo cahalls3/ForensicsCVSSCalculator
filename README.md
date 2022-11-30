@@ -1,8 +1,8 @@
 # ForensicsCVSSCalculator
 
-## September Creation for Digital Forensics
+## November Creation for Digital Forensics
 
-### Created by Carson Halls, Roman Vish, Jade Ashford, John Keenan, Tyler Abbott, and Conor Kikel
+### Created by Carson Halls, Roman Vish, Jade Ashford, John Keenan, Tyler Abbott, Conor Kikel, Chandler Evans
 
 The intent of this program is to provide a Python solution to a CVSS calculator.
 
