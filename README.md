@@ -4,12 +4,14 @@
 
 ### Created by Carson Halls, Roman Vish, Jade Ashford, John Keenan, Tyler Abbott, Conor Kikel, Chandler Evans
 
-The intent of this program is to provide a Python solution to a CVSS calculator.
+The intent of this program is to provide an offline Python solution to a CVSS (Common Vulnerability Scoring System) calculator.
+
+A CVSS Calculator is a way to take a variety of parameters and variables regarding a cyber attack, and rate how damaging of an attack it would be, for example, a highly complex attack with escalated privileges needed will be rated lower than a simple attack that requires no escalated privileges.
 
 In order to run this program the user should do the following:
 
 1. Download code
-2. Run the file "CVSSCalculatorAll.py"
+2. Run the file "CVSSGUI.py"
 3. Input values as prompted
 
 <br />
@@ -55,7 +57,5 @@ We referenced a similarly themed calculator made in JavaScript and used some of 
 
 #### Libraries
 
-- URLLib
 - Math
-- String
 - PySimpleGUI

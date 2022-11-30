@@ -1,5 +1,3 @@
-import string
-from urllib import response
 import math
 
 # Calculating the score this one has the formula
