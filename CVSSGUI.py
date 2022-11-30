@@ -52,13 +52,75 @@ window = sg.Window('Push my Buttons', layout, size=(700,600))
 
 ###Showing the Application, also GUI functions can be placed here.
 
+attackVector = 0
+attackComplexity = 0
+priviledges = 0
+userInteraction = 0
+scope = 0
+confidentiality = 0
+integrity = 0
+availability = 0
+
 while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED or event=="Exit":
         break
-    elif values["AttackVec"] == True:
-        print("Hello World")
     elif event == "Calculate":
+        
         sg.Popup("The CVSS Score is: 69420")
-    
+
+    if values["AttackVecNet"] == True:
+        attackVector = 4
+    elif values["AttackVecAdj"] == True:
+        attackVector = 3
+    elif values["AttackVecLocal"] == True:
+        attackVector = 2
+    elif values["AttackVecPhys"] == True:
+        attackVector = 1
+
+    if values["AttackComplexL"] == True:
+        attackComplexity = 3
+    elif values["AttackComplexM"] == True:
+        attackComplexity = 2
+    elif values["AttackComplexH"] == True:
+        attackComplexity = 1
+
+    if values["PrivReqsN"] == True:
+        priviledges = 3
+    elif values["PrivReqsL"] == True:
+        priviledges = 2
+    elif values["PrivReqsH"] == True:
+        priviledges = 1
+
+    if values["UIReqN"] == True:
+        userInteraction = 2
+    elif values["UIReq"] == True:
+        userInteraction = 1
+
+    if values["ScopeChange"] == True:
+        scope = 2
+    elif values["ScopeNChange"] == True:
+        scope = 1
+
+    if values["ConImpN"] == True:
+        confidentiality = 1
+    elif values["ConImpL"] == True:
+        confidentiality = 2
+    elif values["ConImpH"] == True:
+        confidentiality = 3
+
+    if values["IntImpN"] == True:
+        integrity = 1
+    elif values["IntImpL"] == True:
+        integrity = 2
+    elif values["IntImpH"] == True:
+        integrity = 3
+
+    if values["AvailImpN"] == True:
+        availability = 1
+    elif values["AvailImpL"] == True:
+        availability = 2
+    elif values["AvailImpH"] == True:
+        availability = 3
+
 window.close()
