@@ -41,6 +41,9 @@ There are several different options available on the GUI:
 7. Integrity Impact: Does the attack affect the veracity of the information accessed? Has any data change? What is the extent to which the data has been altered?
 8. Availability Impact: To what extent has the attack affected our ability to access information?
 
+<br />
+<br />
+
 ### References
 
 We referenced a similarly themed calculator made in JavaScript and used some of the weighted categories listed there for our project.
